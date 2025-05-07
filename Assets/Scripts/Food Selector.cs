@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class FoodSelector : MonoBehaviour
 {
+    public TextMeshProUGUI items_ordered;
     public GameObject cartpage;
     public GameObject orderpage;
 
@@ -29,9 +31,38 @@ public class FoodSelector : MonoBehaviour
 
     public void AddToCartAndGoToCartScene()
     {
-       cartpage.SetActive(true);
+        cartpage.SetActive(true);
         orderpage.SetActive(false);
+
+        items_ordered.text = "Santorini Tomato: " + st + "\nCherokee Purple Tomato: " + CPT + "\nSan Marzano Tomato: " + smt + "\nBetter Boy Tomato: " + BBT + "\n";
+
     }
 
+    public void GoBack()
+    {
+        cartpage.SetActive(false);
+        orderpage.SetActive(true);
+    }
+
+    public void Reset_st()
+    {
+        st = 0;
+        items_ordered.text = "Santorini Tomato: " + st + "\nCherokee Purple Tomato: " + CPT + "\nSan Marzano Tomato: " + smt + "\nBetter Boy Tomato: " + BBT + "\n";
+    }
+    public void Reset_CPT()
+    {
+        CPT = 0;
+        items_ordered.text = "Santorini Tomato: " + st + "\nCherokee Purple Tomato: " + CPT + "\nSan Marzano Tomato: " + smt + "\nBetter Boy Tomato: " + BBT + "\n";
+    }
+    public void Reset_smt()
+    {
+        smt = 0;
+        items_ordered.text = "Santorini Tomato: " + st + "\nCherokee Purple Tomato: " + CPT + "\nSan Marzano Tomato: " + smt + "\nBetter Boy Tomato: " + BBT + "\n";
+    }
+    public void Reset_BBT()
+    {
+        BBT = 0;
+        items_ordered.text = "Santorini Tomato: " + st + "\nCherokee Purple Tomato: " + CPT + "\nSan Marzano Tomato: " + smt + "\nBetter Boy Tomato: " + BBT + "\n";
+    }
 
 }
